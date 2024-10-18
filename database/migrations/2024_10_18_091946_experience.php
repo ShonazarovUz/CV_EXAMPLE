@@ -11,7 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('experiences', function(Blueprint $table){
+            $table->id();
+            $table->string('name');
+            $table->string('Description');
+            $table->timestamp('start_data');
+            $table->timestamp('end_data');
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
+            });
     }
 
     /**

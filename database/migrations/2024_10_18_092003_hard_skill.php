@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('hard_skills', function(Blueprint $table){
+            $table->id();
+            $table->integer('homework');
+            $table->integer('participation');
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
+            });
     }
 
     /**
