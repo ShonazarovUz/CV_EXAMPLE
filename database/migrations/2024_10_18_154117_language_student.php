@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('soft_skills', function(Blueprint $table){
-            $table->id();
-            $table->string('skill_name');
-            $table->text('description');
-            $table->integer('level');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
-            });
+        Schema::create('language_student', function(Blueprint $table){
+            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+            $table->foreignId('language_id')->constrained('languages')->onDelete('cascade');
+        });
     }
 
     /**

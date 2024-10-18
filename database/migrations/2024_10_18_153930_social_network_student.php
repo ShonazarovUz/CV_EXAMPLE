@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hard_skills', function(Blueprint $table){
-            $table->id();
-            $table->integer('homework');
-            $table->integer('participation');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
-            });
+        Schema::create('social_network_student', function(Blueprint $table){
+            $table->foreignId('social_network_id')->constrained('social_networks')->onDelete('cascade');
+            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+            $table->string('username');
+        });
     }
 
     /**

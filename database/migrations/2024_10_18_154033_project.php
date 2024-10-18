@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hard_skills', function(Blueprint $table){
+        Schema::create('projects', function(Blueprint $table){
             $table->id();
+            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
             $table->string('name');
-            $table->integer('description');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
-            });
+            $table->text('description');
+            $table->string('source_link');
+            $table->string('demo_link');
+        });
     }
 
     /**

@@ -15,15 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->integer('nt_id');
+            $table->bigInteger('nt_id');
             $table->string('photo');
             $table->string('phone');
             $table->string('profession');
-            $table->string('biography');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
-
-
+            $table->text('biography');
         });
     }
 

@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function(Blueprint $table){
+        Schema::create('experience', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id')->constrained(); // Agar `student_id` cheklovli bo'lsa
             $table->string('name');
             $table->text('description');
-            $table->string('link');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
-            });
+            $table->timestamp('star_date'); // Faqat bitta `star_date` ustuni kerak
+            // Yana boshqa ustunlar bo'lishi mumkin
+        });
+        
     }
 
     /**
