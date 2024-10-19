@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\education;
+use App\Models\language;
+use App\Models\students;
 use Illuminate\Database\Seeder;
 
 class experienceSeeder extends Seeder
@@ -12,6 +14,10 @@ class experienceSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $studentIds = students::pluck('id')->toArray();
+
+        education::factory(10)->create([
+            'student_id' => $studentIds[array_rand($studentIds)],
+        ]);
     }
 }

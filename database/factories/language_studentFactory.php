@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\language;
+use App\Models\students;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,8 @@ class language_studentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'student_id'=>students::factory(),
+            'language_id'=>language::factory(),
         ];
     }
 }

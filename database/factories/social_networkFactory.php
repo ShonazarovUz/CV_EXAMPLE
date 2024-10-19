@@ -17,7 +17,8 @@ class social_networkFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name'=>$this->faker->name,
+            'link'=>$this->faker->link,
         ];
     }
 }

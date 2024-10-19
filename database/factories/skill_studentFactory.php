@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\students;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class skill_studentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'student_id'=>students::factory(),
+            'skill_id'=>students::factory()
         ];
     }
 }
