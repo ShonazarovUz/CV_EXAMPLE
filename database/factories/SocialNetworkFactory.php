@@ -17,8 +17,8 @@ class SocialNetworkFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word, // Tasodifiy ijtimoiy tarmoq nomi (string)
-            'link' => $this->faker->url, // Tasodifiy URL (string)
+            'name' => $this->faker->word,
+            'link' => $this->faker->url,
         ];
     }
 }

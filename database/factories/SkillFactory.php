@@ -17,7 +17,7 @@ class SkillFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word, // Tasodifiy ko'nikma nomi (string)
+            'name' => $this->faker->word, 
         ];
     }
 }

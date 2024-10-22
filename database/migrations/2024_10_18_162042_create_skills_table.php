@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('skills', function (Blueprint $table) {
-            $table->id(); // ID (bigint primary key)
-            $table->string('name'); // name (skill nomi)
+            $table->id(); 
+            $table->string('name'); 
             $table->timestamps();
         });
     }

@@ -17,8 +17,8 @@ class LanguageFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word(), // Tasodifiy til nomi (string)
-            'level' => $this->faker->randomElement(['A1', 'A2', 'B1', 'B2', 'C1', 'C2']), // Tasodifiy daraja (enum)
+            'name' => $this->faker->word(), 
+            'level' => $this->faker->randomElement(['A1', 'A2', 'B1', 'B2', 'C1', 'C2']),
         ];
     }
 }

@@ -17,11 +17,11 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => \App\Models\Student::factory(), // Tasodifiy student bilan bog'lash
-            'name' => $this->faker->sentence(3), // Tasodifiy nom (3 so'zdan iborat)
-            'description' => $this->faker->paragraph(), // Tasodifiy description (matn)
-            'source_link' => $this->faker->url(), // Tasodifiy source_link (URL)
-            'demo_link' => $this->faker->url(), // Tasodifiy demo_link (URL)
+            'student_id' => \App\Models\Student::factory(), 
+            'name' => $this->faker->sentence(3),
+            'description' => $this->faker->paragraph(), 
+            'source_link' => $this->faker->url(),
+            'demo_link' => $this->faker->url(),
         ];
     }
 }

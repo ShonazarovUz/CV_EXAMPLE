@@ -17,11 +17,11 @@ class EducationFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => \App\Models\Student::factory(), // Tasodifiy student bilan bog'lash
-            'name' => $this->faker->sentence(3), // Tasodifiy nom (3 so'zdan iborat)
-            'description' => $this->faker->paragraph(), // Tasodifiy description (matn)
-            'start_date' => $this->faker->dateTimeBetween('-5 years', 'now'), // Tasodifiy start_date
-            'end_date' => $this->faker->optional()->dateTimeBetween('now', '+2 years'), // Tasodifiy end_date (bo'sh bo'lishi ham mumkin)
+            'student_id' => \App\Models\Student::factory(),
+            'name' => $this->faker->sentence(3),
+            'description' => $this->faker->paragraph(),
+            'start_date' => $this->faker->dateTimeBetween('-5 years', 'now'),
+            'end_date' => $this->faker->optional()->dateTimeBetween('now', '+2 years'),
         ];
     }
 }

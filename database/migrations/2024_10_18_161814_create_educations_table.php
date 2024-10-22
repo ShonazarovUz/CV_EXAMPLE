@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('educations', function (Blueprint $table) {
-            $table->id(); // Education jadvalida ID ustuni
-            $table->foreignId('student_id')->constrained('students')->onDelete('cascade'); // student_id (foreign key referencing students table)
-            $table->string('name'); // name (string)
-            $table->text('description'); // description (text)
-            $table->timestamp('start_date')->nullable(); // start_date (timestamp)
-            $table->timestamp('end_date')->nullable(); // end_date (timestamp)
-            $table->timestamps(); // created_at va updated_at maydonlari
+            $table->id();
+            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+            $table->string('name'); 
+            $table->text('description');
+            $table->timestamp('start_date')->nullable(); 
+            $table->timestamp('end_date')->nullable(); 
+            $table->timestamps();
         });
     }
 
