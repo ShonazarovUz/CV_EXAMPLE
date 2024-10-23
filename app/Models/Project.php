@@ -7,13 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    /** @use HasFactory<\Database\Factories\ProjectFactory> */
     use HasFactory;
 
     protected $fillable = [
-        'student_id',
+        'user_id',
         'name',
         'description',
         'source_link',
         'demo_link',
     ];
+
+    public function student(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

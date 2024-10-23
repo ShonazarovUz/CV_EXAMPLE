@@ -4,20 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Language extends Model
 {
+    /** @use HasFactory<\Database\Factories\LanguageFactory> */
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'level',
+        'level  ',
     ];
 
-    public function students(): BelongsToMany
+    public function students(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Student::class, 'language_student');
+        return $this->belongsToMany(User::class, 'language_student', 'language_id', 'student_id');
     }
-
 }
