@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Language;
-use App\Models\User;
+use App\Models\Student;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
@@ -16,8 +16,8 @@ class LanguageTest extends TestCase
     {
         parent::setUp();
 
-        $user = User::factory()->create();
-        Sanctum::actingAs($user);
+        $student = Student::factory()->create();
+        Sanctum::actingAs($student);
     }
 
     public function test_index_returns_successful_response()
@@ -32,7 +32,7 @@ class LanguageTest extends TestCase
 
     public function test_store_creates_new_language()
     {
-        $user = User::factory()->create();
+        $student = Student::factory()->create();
 
         $response = $this->postJson('/api/languages', [
             'name' => "eng",
